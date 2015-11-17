@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/',"SongsController@index");
-Route::get('/songs',"SongsController@index");
-Route::get('/songs/{id}',"SongsController@show");
+Route::get("/","ImageController@welcome");
+Route::resource("image","ImageController",["names"=>["index"=>"images_path","show"=>"image_path","create"=>"image_create","store"=>"image_store","update"=>"image_update","edit"=>"image_edit","destroy"=>"image_destroy"],"except"=>["destroy","edit"]]);
 
 
